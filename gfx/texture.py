@@ -242,7 +242,7 @@ class TextureManager():
                 
         for i in range(0, npixels):
             (pixel,) = struct.unpack('<b', bm[pixel_index:pixel_index+1])            
-            rgba = palette[pixel] | 0xff000000    # set alpha to fully opaque
+            rgba = palette[pixel] | -16777216    # set alpha to fully opaque
             img += struct.pack('<i', rgba)
             pixel_index += 1
             
